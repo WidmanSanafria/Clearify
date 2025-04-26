@@ -1,69 +1,125 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clearify - Navega Sin Interrupciones</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./src/output.css" rel="stylesheet" />
   <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    .hero {
-      background: linear-gradient(135deg, #007bff, #00c6ff);
-      color: white;
-      padding: 80px 20px;
-      text-align: center;
-    }
-    .features {
-      padding: 60px 20px;
-    }
-    .feature-item {
-      padding: 20px;
-    }
-    footer {
-      background-color: #f5f5f5;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #666;
+    .animate-fade-in {
+      animation: fade-in 1s ease-out;
     }
   </style>
 </head>
-<body>
+<body class="font-sans text-gray-800 bg-white min-h-screen flex flex-col justify-between">
 
-<!-- Header/Hero -->
-<header class="hero">
-  <div class="container">
-    <h1 class="display-4">Clearify</h1>
-    <p class="lead">Navega limpio, sin modales ni anuncios invasivos.</p>
-    <a href="Clearify_Extension_v1.zip" class="btn btn-light btn-lg mt-3">⬇ Descargar Extensión</a>
-  </div>
-</header>
-
-<!-- Features Section -->
-<section class="features container text-center">
-  <div class="row">
-    <div class="col-md-4 feature-item">
-      <h3>🛡️ Anti Modales</h3>
-      <p>Elimina automáticamente popups molestos mientras navegas.</p>
+  <!-- Hero Section -->
+  <header class="bg-gradient-to-r from-blue-600 to-cyan-500 text-white py-20 text-center px-4">
+    <h1 class="text-5xl font-bold mb-4">Clearify</h1>
+    <p class="text-xl mb-6">Navega limpio, sin modales ni anuncios invasivos.</p>
+    <a href="Clearify_Extension_v1.zip" class="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-2 px-6 rounded-full shadow transition">
+      ⬇ Descargar Extensión
+    </a>
+    <div class="mt-6">
+      <label for="languageSelector" class="text-white font-semibold mr-2">🌍 Cambiar idioma:</label>
+      <select id="languageSelector" class="text-black py-1 px-3 rounded">
+        <option value="es" selected>Español</option>
+        <option value="en">English</option>
+        <option value="zh">中文</option>
+        <option value="hi">हिन्दी</option>
+      </select>
     </div>
-    <div class="col-md-4 feature-item">
-      <h3>🚀 Velocidad Total</h3>
-      <p>Recupera el control y mejora tu experiencia online.</p>
-    </div>
-    <div class="col-md-4 feature-item">
-      <h3>🔒 Privacidad</h3>
-      <p>Clearify no recolecta tus datos. Todo se ejecuta localmente.</p>
-    </div>
-  </div>
-</section>
+  </header>
 
-<!-- Footer -->
-<footer>
-  <p>© 2025 Clearify. Creado con ❤️ por Widman Sanafria.</p>
-</footer>
+  <!-- Features Section -->
+  <section class="py-16 bg-gray-50 animate-fade-in">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+      <div class="p-6 bg-white rounded shadow hover:shadow-md transition">
+        <h3 class="text-2xl font-semibold mb-2">🛡️ Anti Modales</h3>
+        <p>Elimina automáticamente popups molestos mientras navegas.</p>
+      </div>
+      <div class="p-6 bg-white rounded shadow hover:shadow-md transition">
+        <h3 class="text-2xl font-semibold mb-2">🚀 Velocidad Total</h3>
+        <p>Recupera el control y mejora tu experiencia online.</p>
+      </div>
+      <div class="p-6 bg-white rounded shadow hover:shadow-md transition">
+        <h3 class="text-2xl font-semibold mb-2">🔒 Privacidad</h3>
+        <p>Clearify no recolecta tus datos. Todo se ejecuta localmente.</p>
+      </div>
+    </div>
+  </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Footer -->
+  <footer class="text-center py-6 text-sm text-gray-500 bg-gray-100">
+    © 2025 Clearify. Creado con ❤️ por Widman Sanafria.
+  </footer>
+
+  <script>
+    const translations = {
+      es: {
+        heading: "Clearify",
+        lead: "Navega limpio, sin modales ni anuncios invasivos.",
+        btn: "⬇ Descargar Extensión",
+        feature1: "🛡️ Anti Modales",
+        desc1: "Elimina automáticamente popups molestos mientras navegas.",
+        feature2: "🚀 Velocidad Total",
+        desc2: "Recupera el control y mejora tu experiencia online.",
+        feature3: "🔒 Privacidad",
+        desc3: "Clearify no recolecta tus datos. Todo se ejecuta localmente."
+      },
+      en: {
+        heading: "Clearify",
+        lead: "Browse clean, without modals or invasive ads.",
+        btn: "⬇ Download Extension",
+        feature1: "🛡️ Anti-Modals",
+        desc1: "Automatically removes annoying popups while browsing.",
+        feature2: "🚀 Full Speed",
+        desc2: "Regain control and improve your online experience.",
+        feature3: "🔒 Privacy",
+        desc3: "Clearify does not collect your data. Everything runs locally."
+      },
+      zh: {
+        heading: "Clearify",
+        lead: "干净浏览，无弹窗和侵入式广告。",
+        btn: "⬇ 下载扩展程序",
+        feature1: "🛡️ 防弹窗",
+        desc1: "在浏览时自动移除烦人的弹窗。",
+        feature2: "🚀 极速体验",
+        desc2: "恢复控制权，提升网络体验。",
+        feature3: "🔒 隐私保障",
+        desc3: "Clearify 不收集你的数据，所有操作本地执行。"
+      },
+      hi: {
+        heading: "Clearify",
+        lead: "स्वच्छ ब्राउज़ करें, बिना मोडल्स और घुसपैठी विज्ञापनों के।",
+        btn: "⬇ एक्सटेंशन डाउनलोड करें",
+        feature1: "🛡️ मोडल रोधी",
+        desc1: "ब्राउज़ करते समय परेशान करने वाले पॉपअप को स्वतः हटाता है।",
+        feature2: "🚀 पूर्ण गति",
+        desc2: "नियंत्रण प्राप्त करें और अनुभव सुधारें।",
+        feature3: "🔒 गोपनीयता",
+        desc3: "Clearify आपका डेटा एकत्र नहीं करता, सब कुछ लोकली चलता है।"
+      }
+    };
+
+    document.getElementById('languageSelector').addEventListener('change', function () {
+      const lang = this.value;
+      const t = translations[lang];
+      document.querySelector('h1').innerText = t.heading;
+      document.querySelector('p.text-xl').innerText = t.lead;
+      document.querySelector('a.bg-white').innerText = t.btn;
+      document.querySelectorAll('.grid h3')[0].innerText = t.feature1;
+      document.querySelectorAll('.grid p')[0].innerText = t.desc1;
+      document.querySelectorAll('.grid h3')[1].innerText = t.feature2;
+      document.querySelectorAll('.grid p')[1].innerText = t.desc2;
+      document.querySelectorAll('.grid h3')[2].innerText = t.feature3;
+      document.querySelectorAll('.grid p')[2].innerText = t.desc3;
+    });
+  </script>
+
 </body>
 </html>

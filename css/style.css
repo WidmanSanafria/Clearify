@@ -1,0 +1,66 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f7fa;
+  color: #333;
+}
+
+h1 {
+  font-size: 3em;
+  color: #007bff;
+  text-align: center;
+  margin-top: 60px;
+}
+
+p {
+  text-align: center;
+  font-size: 1.2em;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.btn-download {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 60px 20px;
+  background: #fff;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.features .item {
+  flex: 1 1 250px;
+  max-width: 300px;
+}
+
+.features .item h3 {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+.features .item p {
+  font-size: 1em;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9em;
+  color: #777;
+  background: #e9ecef;
+  margin-top: 40px;
+}
