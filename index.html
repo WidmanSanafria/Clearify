@@ -13,6 +13,20 @@
     .animate-fade-in {
       animation: fade-in 1s ease-out;
     }
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .animate-spin-slow {
+      animation: spin-slow 8s linear infinite;
+    }
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(-3deg); }
+      50% { transform: rotate(3deg); }
+    }
+    .animate-wiggle {
+      animation: wiggle 0.5s ease-in-out infinite;
+    }
   </style>
 </head>
 <body class="font-sans text-gray-800 bg-white min-h-screen flex flex-col justify-between">
@@ -21,9 +35,15 @@
   <header class="bg-gradient-to-r from-blue-600 to-cyan-500 text-white py-20 text-center px-4">
     <h1 class="text-5xl font-bold mb-4">Clearify</h1>
     <p class="text-xl mb-6">Navega limpio, sin modales ni anuncios invasivos.</p>
-    <a href="Clearify_Extension_v1.zip" class="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-2 px-6 rounded-full shadow transition">
-      ⬇ Descargar Extensión
-    </a>
+    
+    <div class="mt-10 max-w-3xl mx-auto">
+      <h2 class="text-4xl font-extrabold mb-4 drop-shadow-md">🚀 ¡Revoluciona tu forma de navegar!</h2>
+      <p class="text-lg mb-8 leading-relaxed">Clearify elimina bloqueos, acelera tu experiencia y protege tu privacidad. Descarga la extensión y disfruta de una navegación sin interrupciones, más rápida y con estilo.</p>
+      <a href="Clearify_Extension_v1.zip" class="inline-flex items-center gap-2 bg-white text-blue-600 hover:text-white hover:bg-blue-700 font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+        <svg class="w-5 h-5 animate-bounce" fill="currentColor" viewBox="0 0 20 20"><path d="M10 12.586l4.95-4.95 1.414 1.414L10 15.414l-6.364-6.364L5.05 7.636 10 12.586z"/></svg>
+        Instalar Extensión
+      </a>
+    </div>
     <div class="mt-6">
       <label for="languageSelector" class="text-white font-semibold mr-2">🌍 Cambiar idioma:</label>
       <select id="languageSelector" class="text-black py-1 px-3 rounded">
@@ -36,19 +56,22 @@
   </header>
 
   <!-- Features Section -->
-  <section class="py-16 bg-gray-50 animate-fade-in">
+  <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50 animate-fade-in">
     <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-      <div class="p-6 bg-white rounded shadow hover:shadow-md transition">
-        <h3 class="text-2xl font-semibold mb-2">🛡️ Anti Modales</h3>
-        <p>Elimina automáticamente popups molestos mientras navegas.</p>
+      <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transform transition duration-500 border-t-4 border-blue-500 group">
+        <div class="mb-4 text-5xl group-hover:animate-wiggle">🛡️</div>
+        <h3 class="text-2xl font-bold mb-2 text-blue-700">Anti Modales</h3>
+        <p class="text-gray-600">Bloquea instantáneamente popups molestos mientras navegas. Más foco, menos ruido.</p>
       </div>
-      <div class="p-6 bg-white rounded shadow hover:shadow-md transition">
-        <h3 class="text-2xl font-semibold mb-2">🚀 Velocidad Total</h3>
-        <p>Recupera el control y mejora tu experiencia online.</p>
+      <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transform transition duration-500 border-t-4 border-green-500 group">
+        <div class="mb-4 text-5xl group-hover:animate-wiggle">⚡</div>
+        <h3 class="text-2xl font-bold mb-2 text-green-700">Velocidad Total</h3>
+        <p class="text-gray-600">Carga más rápida, navegación sin frenos. Navega como si fueras el rayo.</p>
       </div>
-      <div class="p-6 bg-white rounded shadow hover:shadow-md transition">
-        <h3 class="text-2xl font-semibold mb-2">🔒 Privacidad</h3>
-        <p>Clearify no recolecta tus datos. Todo se ejecuta localmente.</p>
+      <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transform transition duration-500 border-t-4 border-purple-500 group">
+        <div class="mb-4 text-5xl group-hover:animate-wiggle">🕶️</div>
+        <h3 class="text-2xl font-bold mb-2 text-purple-700">Privacidad</h3>
+        <p class="text-gray-600">Todo sucede localmente. Clearify no rastrea, no guarda, no interfiere. Solo tú y tu navegador.</p>
       </div>
     </div>
   </section>
